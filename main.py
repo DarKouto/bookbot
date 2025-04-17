@@ -5,13 +5,16 @@ def get_book_text(path):
     with open(path) as f:
         return f.read()
 
-# SAVES THE TEXT OF THE FRANKENSTEIN BOOK ON THE FULL_TEXT VARIABLE
-# SAVES THE RESULT OF THE WORD COUNT OF FULL_TEXT VARIABLE ON THE TOTAL_WORDS VARIABLE
 def main():
-    full_text = get_book_text("books/frankenstein.txt")
-    total_words = get_num_words(full_text)
-    final = count_chars(full_text)
+    # CAPTURES THE RETURN OF THE get_book_text FUNCTION ON THE FULL_BOOK VARIABLE
+    full_book = get_book_text("books/frankenstein.txt")
+    
+    # CAPTURES THE RETURN OF THE get_num_words FUNCTION ON THE TOTAL_WORDS VARIABLE
+    total_words = get_num_words(full_book)
     print(f"{total_words} words found in the document")
-    print(final)
+
+    # CAPTURES THE RETURN of the count_chars FUNCTION ON THE CHAR_COUNT VARIABLE
+    char_count = count_chars(full_book)
+    print(char_count)
 
 main()

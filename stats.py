@@ -1,5 +1,5 @@
 # USES THE SPLIT METHOD ON THE STRING, WHICH SAVES EACH WORD AS AN ITEM ON A LIST
-# SO IF WE GET THE LENGHT OF THAT ARRAY, WE GET THE NUMBER OF WORDS   
+# SO IF WE GET THE LENGHT OF THAT LIST, WE GET THE NUMBER OF WORDS   
 def get_num_words(text):
     num_words_list = text.split()
     num_words = len(num_words_list)
@@ -8,7 +8,6 @@ def get_num_words(text):
 # CONVERTS ALL CHARS TO LOWER CASE
 # ADDS THEM TO THE DICT IF NOT FOUND WITH THE VALUE OF 1
 # INCREMENTS +1 IF THE KEY IS ALREADY THERE
-
 def count_chars(text):
     text_lower = text.lower()
     count_dict = {}
