@@ -6,8 +6,9 @@ def get_book_text(path):
         return f.read()
 
 def main():
-    # CAPTURES THE RETURN OF THE get_book_text FUNCTION ON THE FULL_BOOK VARIABLE
     path_to_book = "books/frankenstein.txt"
+
+    # CAPTURES THE RETURN OF THE get_book_text FUNCTION ON THE FULL_BOOK VARIABLE
     full_book = get_book_text(path_to_book)
     
     # CAPTURES THE RETURN OF THE get_num_words FUNCTION ON THE TOTAL_WORDS VARIABLE
@@ -16,16 +17,22 @@ def main():
     # CAPTURES THE RETURN of the count_chars FUNCTION ON THE CHAR_COUNT VARIABLE
     char_count = count_chars(full_book)
 
-    #CAPURES THE RETURN OF THE SORT CHARS FUNCTIONS
+    #CAPURES THE RETURN OF THE sort_chars FUNCTION ON THE SORTED_CHARS VARIABLE
     sorted_chars = sort_chars(char_count)
     
     # PRINTS
     print("============ BOOKBOT ============")
     print(f"Analyzing book found at {path_to_book}...")
     print("----------- Word Count ----------")
-    print(f"{total_words} words found in the document")
+    print(f"Found {total_words} total words")
     print("--------- Character Count -------")
     
-    print(sorted_chars)
+    for char_dict in sorted_chars:
+        if char_dict["char"].isalpha() == True:
+            character = char_dict["char"]  
+            count = char_dict["count"]
+            print(f"{character}: {count}")
+
+    print("============= END ===============")
 
 main()
